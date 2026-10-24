@@ -1,0 +1,914 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width,initial-scale=1,viewport-fit=cover" name="viewport"/>
+  <link href="manifest.json" rel="manifest"/>
+  <link href="icon.svg" rel="icon" type="image/svg+xml"/>
+  <meta content="#eee8ff" name="theme-color"/>
+  <meta content="light" name="color-scheme"/>
+  <meta content="MindCare: Student Safe Space for emotional wellness" name="description"/>
+  <title>
+   MindCare — Student Safe Space
+  </title>
+  <style>
+   :root{--ink:#302448;--muted:#766c8a;--purple:#7853ce;--lav:#f2edff;--line:#e9e0f8;--white:#fff;--shadow:0 14px 40px #7964a51c}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","SF Pro Text","Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:radial-gradient(circle at 12% 5%,#f8dffc 0,transparent 32%),radial-gradient(circle at 90% 30%,#e5e4ff 0,transparent 38%),#f7f4ff;min-height:100vh}button,input,textarea{font:inherit}.emoji,.emotion-emoji,.icon-emoji{font-family:"Apple Color Emoji","Segoe UI Emoji","Noto Color Emoji",sans-serif;font-variant-emoji:emoji}button{cursor:pointer}button:focus-visible,input:focus-visible,textarea:focus-visible{outline:3px solid #9472e8;outline-offset:3px}.layout{display:grid;grid-template-columns:245px minmax(0,1fr);max-width:1550px;margin:auto;min-height:100vh}.sidebar{background:#ffffffad;backdrop-filter:blur(22px);border-right:1px solid #ffffffb0;padding:30px 18px;display:flex;flex-direction:column;gap:25px;position:sticky;top:0;height:100vh}.logo{font-size:23px;font-weight:850;letter-spacing:-1px;display:flex;align-items:center;gap:10px}.logo small{display:block;font-size:11px;color:var(--muted);font-weight:550;letter-spacing:.2px}.logo-icon{background:#e7d8ff;padding:9px;border-radius:17px}.nav{display:grid;gap:8px}.nav button,.mobile-nav button{border:0;background:transparent;color:#716683;text-align:left;border-radius:15px;padding:14px 12px;font-weight:650}.nav button.active{background:#e9ddff;color:#5c37ad}.nav button:hover{background:#f0e8ff}.sidebar-tip{margin-top:auto;background:linear-gradient(140deg,#f0e1ff,#e9e8ff);border-radius:22px;padding:18px;font-size:14px}.sidebar-tip p{line-height:1.55}.school{font-size:11px;color:var(--muted);line-height:1.5}.main{padding:28px clamp(16px,3.3vw,50px) 95px;min-width:0}.top{display:flex;justify-content:space-between;align-items:center;margin-bottom:30px;gap:10px}.eyebrow{font-size:11px;font-weight:800;letter-spacing:1.6px;color:#8b6cbb}.top-right{display:flex;align-items:center;gap:13px;color:var(--muted);font-size:13px}.avatar{background:white;border-radius:50%;padding:12px;box-shadow:var(--shadow)}h1{font-size:clamp(29px,4vw,42px);letter-spacing:-1.4px;margin:10px 0}h2{font-size:23px;letter-spacing:-.6px;margin:0 0 8px}h3{margin:0 0 9px;font-size:17px}p{line-height:1.65}.muted{color:var(--muted)}.page{display:none;animation:fade .35s ease}.page.active{display:block}@keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}.hero{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:28px 32px;background:linear-gradient(115deg,#fff,#eee4ff);border-radius:30px;box-shadow:var(--shadow);margin-bottom:20px}.hero p{max-width:530px;color:var(--muted);margin:0 0 18px}.flower{font-size:75px;filter:drop-shadow(0 8px 9px #a98dc766)}.btn{border:0;border-radius:15px;padding:12px 17px;font-weight:750;background:#eee5ff;color:#6542a8;transition:transform .18s,filter .18s}.btn:hover{transform:translateY(-2px);filter:brightness(.97)}.btn.primary{background:#7956d1;color:white;box-shadow:0 7px 18px #7956d145}.btn.danger{background:#fff0f2;color:#a63e5b}.grid{display:grid;grid-template-columns:1.15fr 1fr 1fr;gap:18px}.card{background:#ffffffdb;border:1px solid #ffffff;border-radius:26px;padding:22px;box-shadow:var(--shadow);min-width:0}.brain-card{background:linear-gradient(155deg,#f5edff,#e6dcff);text-align:center}.brain-card svg{width:min(100%,235px);height:190px;filter:drop-shadow(0 12px 8px #8f69c044)}.brain-card h3{font-size:21px}.pill{display:inline-block;background:#fff9;padding:7px 12px;border-radius:20px;color:#7555a8;font-size:10px;font-weight:800;letter-spacing:1px}.chart{height:170px;display:flex;align-items:end;gap:11px;padding:20px 0 8px;border-bottom:1px solid var(--line)}.chart-col{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:end;height:100%;gap:8px}.bar{width:100%;max-width:35px;border-radius:12px 12px 5px 5px;background:linear-gradient(#a789e9,#e3d5ff);min-height:12px;transition:height .4s}.chart-col small{font-size:10px;color:var(--muted)}.progress-track{height:10px;background:#eee8f8;border-radius:10px;overflow:hidden;margin:8px 0 20px}.progress-fill{height:100%;background:linear-gradient(90deg,#a68be9,#7553d2);width:0;transition:width .4s}.stat-row{display:flex;justify-content:space-between;font-size:13px}.quote{background:#f3edff;border-radius:18px;padding:17px;min-height:108px}.quick{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:18px}.quick button{background:#ffffffd9;border:1px solid #fff;border-radius:22px;padding:20px 8px;box-shadow:var(--shadow);color:var(--ink);font-weight:700}.quick span{display:block;font-size:29px;margin-bottom:9px}.page-intro{margin-bottom:25px}.page-intro p{color:var(--muted);max-width:660px}.emotion-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:11px}.emotion{border:1px solid #eee7fb;background:#fff;border-radius:19px;padding:15px 8px;color:var(--ink);font-weight:650;min-height:94px}.emotion:hover,.emotion.selected{background:#e9ddff;border-color:#bda5ee}.emotion .emoji{display:block;font-size:29px;margin-bottom:9px}.result{margin-top:22px;background:linear-gradient(130deg,#efe3ff,#fff);border:1px solid #e9dcfa;border-radius:24px;padding:23px}.result[hidden],.hidden{display:none!important}textarea,input{width:100%;border:1px solid #e5dced;border-radius:16px;background:#fff;padding:14px 16px;color:var(--ink)}textarea{resize:vertical;min-height:140px}.field{display:block;font-weight:700;margin:16px 0 8px}.stack{display:grid;gap:15px}.entry{border:1px solid var(--line);border-radius:19px;padding:16px;background:white;overflow-wrap:anywhere}.entry-head{display:flex;align-items:start;justify-content:space-between;gap:12px}.entry time{font-size:12px;color:var(--muted)}.entry p{white-space:pre-wrap}.entry button{border:0;background:#fff0f2;color:#9c3551;padding:9px 12px;border-radius:12px}.two-col{display:grid;grid-template-columns:1fr 1fr;gap:20px}.breath-zone{text-align:center;padding:25px 10px}.breath-circle{width:180px;height:180px;border-radius:50%;background:radial-gradient(circle at 35% 28%,#e8d6ff,#9c76e7 70%,#7654cf);box-shadow:0 0 0 17px #e7dcff70,0 18px 35px #9674d344;margin:22px auto;display:grid;place-items:center;color:#fff;font-weight:800;letter-spacing:.5px;transform:scale(.78)}.breath-circle.running{animation:breathe 8s ease-in-out infinite}@keyframes breathe{0%,100%{transform:scale(.78)}50%{transform:scale(1.1)}}.ground-item{padding:13px 0;border-bottom:1px solid var(--line)}.ground-item label{display:flex;gap:12px;align-items:center;cursor:pointer}.ground-item input{width:20px;height:20px;accent-color:var(--purple)}.sounds-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}.sound-card{text-align:center}.sound-emoji{font-size:48px;margin:10px}.sound-card .btn{width:100%}.privacy{font-size:13px;color:#766c8a;background:#f4edff;padding:13px 16px;border-radius:14px;margin:15px 0}.footer{margin-top:30px;text-align:center;color:#766c8a;font-size:12px}.mobile-nav{display:none}.toast{position:fixed;bottom:100px;left:50%;transform:translateX(-50%);background:#463365;color:white;padding:12px 20px;border-radius:16px;box-shadow:var(--shadow);z-index:30;font-size:13px;max-width:90vw;text-align:center}.row-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:15px}@media(max-width:1100px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.grid .card:last-child{grid-column:1/-1}}@media(max-width:760px){.layout{display:block}.sidebar{display:none}.main{padding:20px 16px 110px}.top{margin-bottom:20px}.top-right #todayDate{display:none}.hero{padding:23px}.flower{font-size:50px}.grid,.two-col{grid-template-columns:1fr}.grid .card:last-child{grid-column:auto}.quick{grid-template-columns:repeat(2,1fr)}.sounds-grid{grid-template-columns:1fr}.mobile-nav{display:flex;position:fixed;bottom:0;left:0;right:0;justify-content:space-around;gap:3px;padding:8px 6px calc(9px + env(safe-area-inset-bottom));background:#ffffffdb;backdrop-filter:blur(24px);border-top:1px solid #e8e0f2;z-index:20}.mobile-nav button{padding:8px 3px;font-size:10px;text-align:center;flex:1;min-width:0}.mobile-nav button span{display:block;font-size:21px;margin-bottom:3px}.mobile-nav button.active{color:#6540bd;background:#efe7ff}.emotion-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.emotion{font-size:12px}.card{padding:19px}}@media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation-duration:.01ms!important;transition-duration:.01ms!important}}
+
+/* iOS-inspired finishing touches */
+.brain-card svg{filter:drop-shadow(0 18px 14px #7c56b435);transition:transform .45s ease;max-height:240px}.brain-card:hover svg{transform:translateY(-5px) rotate(-2deg)}
+.mini-wellness{margin:18px 0;padding:22px 10px;text-align:center;background:linear-gradient(145deg,#f8e9ff,#ece8ff);border-radius:25px;font-size:38px}.mini-wellness strong{display:block;font-size:18px}.mini-wellness p{font-size:12px;color:#74678b}
+.admin-link{border:0;background:#eee5ff;border-radius:14px;padding:12px;color:#6345a5;cursor:pointer;text-align:left;font-weight:700}
+.admin-stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin:20px 0}.admin-stats>div{padding:18px 10px;background:#f2ebff;border-radius:18px;text-align:center}.admin-stats strong{display:block;font-size:27px;color:#6845c3}.admin-stats span{display:block;font-size:12px;color:#6f6583;margin-top:5px}
+@media(max-width:700px){.admin-stats{grid-template-columns:repeat(2,minmax(0,1fr))}.admin-link{margin-bottom:12px}}
+
+/* MindCare dimensional iOS-inspired visual system */
+:root{--shadow:0 18px 28px #6e4e9e24,0 5px 8px #5e3e8e12}
+body{background:radial-gradient(ellipse at 5% 0%,#fce5ff 0,transparent 37%),radial-gradient(ellipse at 96% 24%,#ddd7ff 0,transparent 45%),linear-gradient(145deg,#f9f6ff,#efeaff 65%,#f9eefa);background-attachment:fixed}
+.sidebar{background:linear-gradient(145deg,#ffffffd9,#f4edffd9);box-shadow:inset -1px 0 #ffffffaa,8px 0 30px #8869ad10}
+.card,.hero,.quick button,.sound-card,.sidebar-tip{position:relative;box-shadow:0 20px 35px #7353a01f,0 6px 12px #7c60a414,inset 0 2px 1px #ffffff,inset 0 -2px 4px #ab8ac010;border:1px solid #ffffffdf;transition:transform .25s ease,box-shadow .25s ease}
+.card:hover,.quick button:hover,.sound-card:hover{transform:translateY(-4px);box-shadow:0 27px 40px #7353a02b,0 9px 16px #7c60a41c,inset 0 2px 1px #fff}
+.hero{background:linear-gradient(135deg,#fff 5%,#f6eaff 57%,#e5d6ff);overflow:hidden}
+.hero:after{content:'✦';position:absolute;right:14%;top:13%;font-size:26px;color:#fff;text-shadow:0 3px 7px #a581df}
+.btn,.nav button.active,.mobile-nav button.active{box-shadow:inset 0 2px 2px #ffffff9c,inset 0 -3px 5px #7c54ae21,0 7px 12px #8263a52b;border:1px solid #ffffff70}
+.btn.primary{background:linear-gradient(165deg,#a786f0,#7853cd 75%,#6741b5);box-shadow:inset 0 2px 2px #e5d5ff9e,inset 0 -3px 6px #52348c70,0 9px 16px #7956d145}
+.btn:active,.quick button:active,.emotion:active{transform:translateY(2px) scale(.98)}
+.brain-card{background:radial-gradient(circle at 50% 20%,#fff7ff,#f1e6ff 57%,#d9c6f7);overflow:hidden}
+.brain-stage{height:235px;position:relative;display:grid;place-items:center;isolation:isolate;perspective:650px}
+.brain-stage:before{content:'';position:absolute;width:205px;height:205px;border-radius:50%;background:radial-gradient(circle at 32% 25%,#ffffffaa,#e2caff99 70%,#c8a6f377);box-shadow:inset 8px 9px 18px #ffffffcc,inset -9px -12px 25px #8e68cc33,0 17px 30px #825cb528}
+.brain-card svg.brain-3d{position:relative;z-index:1;width:100%;max-width:290px;height:225px;max-height:none;filter:drop-shadow(0 13px 9px #7650b83d);animation:brainFloat 4.2s ease-in-out infinite}
+.brain-card:hover svg.brain-3d{animation-play-state:paused;transform:translateY(-5px) rotate(-2deg)}
+.sparkle{position:absolute;color:#fff;font-size:25px;text-shadow:0 2px 7px #8c66d3;z-index:2}.sparkle-a{left:12%;top:20%}.sparkle-b{right:10%;top:40%}
+@keyframes brainFloat{0%,100%{transform:translateY(2px) rotate(-1deg)}50%{transform:translateY(-8px) rotate(1deg)}}
+.flower,.sound-emoji,.quick span{filter:drop-shadow(0 7px 5px #7b56a03b);transform:translateZ(0)}
+.sound-emoji{display:inline-block;background:radial-gradient(circle at 30% 20%,#fff,#eadcff 70%,#cdb1ee);padding:17px;border-radius:28px;box-shadow:inset 2px 3px 5px #fff,inset -4px -5px 8px #b68fdd60,0 12px 18px #7956aa24}
+.emotion{background:linear-gradient(155deg,#fff,#f5eeff);box-shadow:inset 0 2px 1px #fff,inset 0 -3px 4px #a98bd31c,0 8px 14px #72549c16;transition:transform .2s,box-shadow .2s}
+.emotion:hover,.emotion.selected{transform:translateY(-3px);box-shadow:inset 0 2px 1px #fff,0 12px 19px #7551a42c}
+.emotion .emoji{filter:drop-shadow(0 4px 3px #9b75ba4a)}
+.breath-circle{background:radial-gradient(circle at 28% 19%,#fff9ff 0,#e7c8ff 20%,#bd93f4 48%,#8c60d8 78%,#6241ad 100%);box-shadow:inset 9px 10px 17px #fff9,inset -12px -14px 24px #5d369f70,0 0 0 18px #e7dcff70,0 23px 32px #9674d344}
+.mobile-nav{box-shadow:0 -8px 28px #7353a021}
+@media(prefers-reduced-motion:reduce){.brain-card svg.brain-3d{animation:none}.card,.btn,.emotion{transition:none}}
+
+/* MINDCARE STUDIO — premium volumetric iOS design */
+:root{--ink:#29233b;--muted:#756f88;--purple:#7450cb;--shadow:0 24px 58px #6b4b9924,0 3px 9px #76649a12}
+body{background:radial-gradient(ellipse 43% 35% at 3% 1%,#e5d3ff 0,transparent 100%),radial-gradient(ellipse 40% 40% at 100% 12%,#e7d9ff 0,transparent 100%),linear-gradient(155deg,#f9f7ff,#eee9fc 50%,#f7f3ff);background-attachment:fixed}
+.sidebar{background:linear-gradient(155deg,#ffffffdc,#f5f0ffb8);border-right:1px solid #fff;box-shadow:12px 0 42px #8266aa0b}
+.logo-icon,.avatar{background:linear-gradient(135deg,#fefcff,#cdb5f4);box-shadow:inset 2px 2px 4px #fff,inset -3px -4px 8px #9b79c766,0 8px 15px #6b4b9929}
+.nav button.active{background:linear-gradient(145deg,#f6efff,#dac5f8);box-shadow:inset 1px 2px 3px #fff,0 5px 14px #8266aa24}
+.hero{min-height:236px;overflow:hidden;position:relative;background:linear-gradient(122deg,#fff 10%,#f7f0ff 49%,#e5d3fb 100%);border:1px solid #fff;box-shadow:0 22px 55px #7d5aaa25,inset 0 2px 1px #fff;border-radius:34px}
+.hero:after{content:"";position:absolute;width:280px;height:280px;right:-92px;top:-138px;border-radius:50%;background:radial-gradient(circle at 35% 25%,#fff9,#b28de844 58%,transparent 72%)}
+.hero-orb{position:relative;flex:none;width:148px;height:148px;border-radius:50%;background:radial-gradient(circle at 27% 20%,#fff,#f1dbff 20%,#b794e9 55%,#7950bb 80%,#53307f);box-shadow:inset -15px -18px 28px #50307988,inset 12px 14px 22px #fff9,0 25px 34px #7048a54d;transform:rotate(-20deg);z-index:1}
+.hero-orb:after{content:"";position:absolute;left:22%;top:14%;width:40%;height:19%;border-radius:50%;background:#fff9;filter:blur(10px);transform:rotate(-25deg)}
+.card{background:linear-gradient(148deg,#ffffffed,#f9f6ffeb);border:1px solid #fff;border-radius:30px;box-shadow:0 19px 45px #7b5e9f21,0 3px 8px #7961a210,inset 0 2px 2px #fff;transition:transform .28s,box-shadow .28s}
+.card:hover{transform:translateY(-3px);box-shadow:0 27px 56px #7b5e9f2a,0 3px 9px #7961a218}
+.brain-card{background:radial-gradient(circle at 42% 22%,#fff 0,#f7ecff 36%,#e0cff7 75%,#ceb7ee);border:1px solid #fff;position:relative}
+.brain-card:after{content:"";position:absolute;inset:12px;border:1px solid #fff8;border-radius:23px;pointer-events:none}
+.brain-stage{min-height:245px;display:grid;place-items:center;perspective:800px}
+.brain-card svg.brain-3d{height:255px;width:100%;max-width:360px;animation:brainFloat 5.5s ease-in-out infinite;filter:drop-shadow(0 15px 13px #6945972d)}
+.sparkle{display:none}
+.btn,.quick button,.emotion,.sound-card{background:linear-gradient(145deg,#fff,#eee7fb);box-shadow:inset 0 2px 2px #fff,0 9px 19px #775c9a22,0 2px 4px #745b9b18;border:1px solid #fff;border-radius:19px;transition:transform .2s,box-shadow .2s}
+.btn:active,.quick button:active,.emotion:active{transform:translateY(2px) scale(.985);box-shadow:inset 0 3px 9px #7659a72b}
+.btn.primary{background:linear-gradient(145deg,#ad88ed,#7550cc 70%,#6037b5);color:#fff;box-shadow:inset 0 2px 2px #e7d3ff9c,inset 0 -3px 5px #4b26887a,0 10px 24px #7750c35c}
+.quick button{min-height:125px;font-size:14px}.quick span{width:55px;height:55px;margin:0 auto 12px;display:grid;place-items:center;border-radius:18px;background:radial-gradient(circle at 28% 22%,#fff,#e4d1fb 38%,#a47cda 85%);box-shadow:inset 2px 3px 4px #fff,inset -4px -5px 10px #8155b875,0 9px 15px #8e6fba40;color:#6942a5;font-size:30px;text-shadow:0 2px 2px #fff9}
+.emotion{min-height:104px}.emotion .emoji{filter:drop-shadow(0 5px 4px #8e72ae55);font-size:30px}.emotion.selected{background:linear-gradient(145deg,#fff,#d9c5f7);box-shadow:inset 0 2px 3px #fff,0 8px 18px #8a62bd45}
+.breath-circle{background:radial-gradient(circle at 27% 20%,#fff,#e9d3ff 24%,#b18ce9 53%,#7650bd 80%,#4e2c81);box-shadow:inset 12px 12px 24px #fff8,inset -18px -18px 26px #4828798a,0 25px 36px #7351ae60,0 0 0 18px #e7dcff80}
+.sound-emoji{width:92px;height:92px;margin:14px auto;display:grid;place-items:center;border-radius:29px;background:radial-gradient(circle at 25% 15%,#fff,#e6d6fc 43%,#ac89dd);box-shadow:inset 4px 5px 7px #fff,inset -6px -7px 14px #7752b260,0 12px 20px #7b5ca74a}
+.mobile-nav{background:#f9f6ffdb;box-shadow:0 -8px 40px #8066a71c;backdrop-filter:blur(24px)}
+@media(max-width:760px){.hero-orb{width:86px;height:86px}.hero{min-height:210px}.brain-card svg.brain-3d{height:230px}.quick button{min-height:110px}}
+@media(prefers-reduced-motion:reduce){.brain-card svg.brain-3d{animation:none}}
+  </style>
+ </head>
+ <body>
+  <div class="layout">
+   <aside class="sidebar">
+    <div class="logo">
+     <span class="logo-icon">
+      🧠
+     </span>
+     <span>
+      MindCare
+      <small>
+       Student Safe Space
+      </small>
+     </span>
+    </div>
+    <div class="nav" id="sideNav">
+     <button class="active" data-page="dashboard">
+      ⌂   Dashboard
+     </button>
+     <button data-page="emotions">
+      ♡   Emotional Check-In
+     </button>
+     <button data-page="journal">
+      ✎   Private Journal
+     </button>
+     <button data-page="calm">
+      ☼   Calm Corner
+     </button>
+     <button data-page="sounds">
+      ♫   Calming Sounds
+     </button>
+    </div>
+    <div class="sidebar-tip">
+     ✦
+     <strong>
+      A little reminder
+     </strong>
+     <p>
+      You deserve kindness, especially from yourself.
+     </p>
+    </div>
+    <button class="admin-link" data-page="admin">
+     ⚙ Staff dashboard
+    </button>
+    <div class="school">
+     DepEd BCity Senior High School
+     <br/>
+     San Antonio Campus
+     <br/>
+     Biñan City, Laguna
+    </div>
+   </aside>
+   <main class="main">
+    <header class="top">
+     <div>
+      <span class="eyebrow">
+       YOUR LITTLE CORNER OF CALM ✦
+      </span>
+      <div class="muted" style="font-size:13px;margin-top:5px">
+       A gentle space, just for you.
+      </div>
+     </div>
+     <div class="top-right">
+      <span id="todayDate">
+      </span>
+      <span class="avatar">
+       ✦
+      </span>
+     </div>
+    </header>
+    <section class="page active" id="dashboard">
+     <div class="hero">
+      <div>
+       <span class="eyebrow">
+        HELLO, LOVELY HUMAN ✧
+       </span>
+       <h1>
+        How's your heart today?
+       </h1>
+       <p>
+        Whatever you're feeling, there's room for it here. Take your time. 💜
+       </p>
+       <button class="btn primary" data-go="emotions">
+        Check in with yourself →
+       </button>
+      </div>
+      <div aria-hidden="true" class="hero-orb">
+       <span class="hero-orb-core">
+       </span>
+      </div>
+     </div>
+     <div class="grid">
+      <article class="card brain-card">
+       <span class="pill">
+        ✦ YOUR SAFE SPACE
+       </span>
+       <div class="brain-stage">
+        <span class="sparkle sparkle-a">
+         ✦
+        </span>
+        <span class="sparkle sparkle-b">
+         ✧
+        </span>
+        <svg aria-label="Volumetric lavender brain sculpture" class="brain-3d" role="img" viewbox="0 0 420 320">
+         <defs>
+          <radialgradient cx="31%" cy="19%" id="volume" r="83%">
+           <stop stop-color="#fff5ff">
+           </stop>
+           <stop offset=".23" stop-color="#e9c9fa">
+           </stop>
+           <stop offset=".55" stop-color="#c29de6">
+           </stop>
+           <stop offset=".82" stop-color="#9466c6">
+           </stop>
+           <stop offset="1" stop-color="#5a398c">
+           </stop>
+          </radialgradient>
+          <lineargradient id="groove" x1="0" x2=".9" y1="0" y2="1">
+           <stop stop-color="#5f3d92">
+           </stop>
+           <stop offset=".43" stop-color="#8b5cbb">
+           </stop>
+           <stop offset="1" stop-color="#e9c5ff">
+           </stop>
+          </lineargradient>
+          <radialgradient cx="27%" cy="15%" id="lobe" r="90%">
+           <stop stop-color="#fff0ff">
+           </stop>
+           <stop offset=".3" stop-color="#dfb8f3">
+           </stop>
+           <stop offset=".7" stop-color="#ae7bd4">
+           </stop>
+           <stop offset="1" stop-color="#77509d">
+           </stop>
+          </radialgradient>
+          <filter height="200%" id="sculpture" width="180%" x="-40%" y="-40%">
+           <fedropshadow dx="5" dy="18" flood-color="#53337c" flood-opacity=".3" stddeviation="13">
+           </fedropshadow>
+          </filter>
+          <filter id="soft">
+           <fegaussianblur stddeviation="10">
+           </fegaussianblur>
+          </filter>
+         </defs>
+         <ellipse cx="214" cy="288" fill="#61458c" filter="url(#soft)" opacity=".17" rx="132" ry="18">
+         </ellipse>
+         <g filter="url(#sculpture)">
+          <path d="M211 62 C184 23 122 33 101 64 C61 59 40 101 58 133 C24 158 38 207 71 218 C72 254 110 269 140 256 C166 280 198 264 210 247 C232 271 269 270 287 248 C333 255 360 222 349 190 C377 157 351 121 336 111 C350 76 319 47 288 58 C268 24 228 31 211 62Z" fill="url(#volume)" stroke="#ab7ed2" stroke-width="2">
+          </path>
+          <path d="M210 59 C202 83 220 101 209 124 C193 143 221 160 211 184 C199 209 216 226 210 247" fill="none" opacity=".55" stroke="#65428e" stroke-linecap="round" stroke-width="10">
+          </path>
+          <path d="M119 64 C153 70 149 91 129 101 C107 113 123 132 146 130 C168 128 163 154 145 165" fill="none" opacity=".65" stroke="#70459b" stroke-linecap="round" stroke-width="15">
+          </path>
+          <path d="M119 64 C153 70 149 91 129 101 C107 113 123 132 146 130 C168 128 163 154 145 165" fill="none" stroke="url(#groove)" stroke-linecap="round" stroke-width="10">
+          </path>
+          <path d="M119 64 C153 70 149 91 129 101 C107 113 123 132 146 130 C168 128 163 154 145 165" fill="none" opacity=".5" stroke="#f7dcff" stroke-linecap="round" stroke-width="3" transform="translate(-3 -4)">
+          </path>
+          <path d="M85 91 C110 77 130 93 113 112 C99 127 76 116 72 137" fill="none" opacity=".65" stroke="#70459b" stroke-linecap="round" stroke-width="15">
+          </path>
+          <path d="M85 91 C110 77 130 93 113 112 C99 127 76 116 72 137" fill="none" stroke="url(#groove)" stroke-linecap="round" stroke-width="10">
+          </path>
+          <path d="M85 91 C110 77 130 93 113 112 C99 127 76 116 72 137" fill="none" opacity=".5" stroke="#f7dcff" stroke-linecap="round" stroke-width="3" transform="translate(-3 -4)">
+          </path>
+          <path d="M63 162 C89 140 117 149 110 171 C100 192 75 178 78 207" fill="none" opacity=".65" stroke="#70459b" stroke-linecap="round" stroke-width="15">
+          </path>
+          <path d="M63 162 C89 140 117 149 110 171 C100 192 75 178 78 207" fill="none" stroke="url(#groove)" stroke-linecap="round" stroke-width="10">
+          </path>
+          <path d="M63 162 C89 140 117 149 110 171 C100 192 75 178 78 207" fill="none" opacity=".5" stroke="#f7dcff" stroke-linecap="round" stroke-width="3" transform="translate(-3 -4)">
+          </path>
+          <path d="M111 214 C139 196 161 215 145 238" fill="none" opacity=".65" stroke="#70459b" stroke-linecap="round" stroke-width="15">
+          </path>
+          <path d="M111 214 C139 196 161 215 145 238" fill="none" stroke="url(#groove)" stroke-linecap="round" stroke-width="10">
+          </path>
+          <path d="M111 214 C139 196 161 215 145 238" fill="none" opacity=".5" stroke="#f7dcff" stroke-linecap="round" stroke-width="3" transform="translate(-3 -4)">
+          </path>
+          <path d="M166 53 C184 72 165 84 169 104 C172 124 190 126 181 146" fill="none" opacity=".65" stroke="#70459b" stroke-linecap="round" stroke-width="15">
+          </path>
+          <path d="M166 53 C184 72 165 84 169 104 C172 124 190 126 181 146" fill="none" stroke="url(#groove)" stroke-linecap="round" stroke-width="10">
+          </path>
+          <path d="M166 53 C184 72 165 84 169 104 C172 124 190 126 181 146" fill="none" opacity=".5" stroke="#f7dcff" stroke-linecap="round" stroke-width="3" transform="translate(-3 -4)">
+          </path>
+          <path d="M151 172 C178 158 193 178 181 197 C170 216 188 233 180 249" fill="none" opacity=".65" stroke="#70459b" stroke-linecap="round" stroke-width="15">
+          </path>
+          <path d="M151 172 C178 158 193 178 181 197 C170 216 188 233 180 249" fill="none" stroke="url(#groove)" stroke-linecap="round" stroke-width="10">
+          </path>
+          <path d="M151 172 C178 158 193 178 181 197 C170 216 188 233 180 249" fill="none" opacity=".5" stroke="#f7dcff" stroke-linecap="round" stroke-width="3" transform="translate(-3 -4)">
+          </path>
+          <path d="M235 54 C219 75 240 88 232 108 C224 127 244 138 232 156" fill="none" opacity=".65" stroke="#70459b" stroke-linecap="round" stroke-width="15">
+          </path>
+          <path d="M235 54 C219 75 240 88 232 108 C224 127 244 138 232 156" fill="none" stroke="url(#groove)" stroke-linecap="round" stroke-width="10">
+          </path>
+          <path d="M235 54 C219 75 240 88 232 108 C224 127 244 138 232 156" fill="none" opacity=".5" stroke="#f7dcff" stroke-linecap="round" stroke-width="3" transform="translate(-3 -4)">
+          </path>
+          <path d="M267 61 C243 79 267 99 283 91 C308 82 316 106 294 120" fill="none" opacity=".65" stroke="#70459b" stroke-linecap="round" stroke-width="15">
+          </path>
+          <path d="M267 61 C243 79 267 99 283 91 C308 82 316 106 294 120" fill="none" stroke="url(#groove)" stroke-linecap="round" stroke-width="10">
+          </path>
+          <path d="M267 61 C243 79 267 99 283 91 C308 82 316 106 294 120" fill="none" opacity=".5" stroke="#f7dcff" stroke-linecap="round" stroke-width="3" transform="translate(-3 -4)">
+          </path>
+          <path d="M321 111 C299 119 309 143 331 146" fill="none" opacity=".65" stroke="#70459b" stroke-linecap="round" stroke-width="15">
+          </path>
+          <path d="M321 111 C299 119 309 143 331 146" fill="none" stroke="url(#groove)" stroke-linecap="round" stroke-width="10">
+          </path>
+          <path d="M321 111 C299 119 309 143 331 146" fill="none" opacity=".5" stroke="#f7dcff" stroke-linecap="round" stroke-width="3" transform="translate(-3 -4)">
+          </path>
+          <path d="M329 176 C305 158 283 173 291 194 C298 211 320 206 307 233" fill="none" opacity=".65" stroke="#70459b" stroke-linecap="round" stroke-width="15">
+          </path>
+          <path d="M329 176 C305 158 283 173 291 194 C298 211 320 206 307 233" fill="none" stroke="url(#groove)" stroke-linecap="round" stroke-width="10">
+          </path>
+          <path d="M329 176 C305 158 283 173 291 194 C298 211 320 206 307 233" fill="none" opacity=".5" stroke="#f7dcff" stroke-linecap="round" stroke-width="3" transform="translate(-3 -4)">
+          </path>
+          <path d="M267 232 C242 210 264 196 280 191 C298 185 281 159 264 164" fill="none" opacity=".65" stroke="#70459b" stroke-linecap="round" stroke-width="15">
+          </path>
+          <path d="M267 232 C242 210 264 196 280 191 C298 185 281 159 264 164" fill="none" stroke="url(#groove)" stroke-linecap="round" stroke-width="10">
+          </path>
+          <path d="M267 232 C242 210 264 196 280 191 C298 185 281 159 264 164" fill="none" opacity=".5" stroke="#f7dcff" stroke-linecap="round" stroke-width="3" transform="translate(-3 -4)">
+          </path>
+          <path d="M251 124 C273 111 291 133 274 146 C257 159 241 153 244 177" fill="none" opacity=".65" stroke="#70459b" stroke-linecap="round" stroke-width="15">
+          </path>
+          <path d="M251 124 C273 111 291 133 274 146 C257 159 241 153 244 177" fill="none" stroke="url(#groove)" stroke-linecap="round" stroke-width="10">
+          </path>
+          <path d="M251 124 C273 111 291 133 274 146 C257 159 241 153 244 177" fill="none" opacity=".5" stroke="#f7dcff" stroke-linecap="round" stroke-width="3" transform="translate(-3 -4)">
+          </path>
+          <path d="M119 141 C135 122 155 137 147 151" fill="none" opacity=".65" stroke="#70459b" stroke-linecap="round" stroke-width="15">
+          </path>
+          <path d="M119 141 C135 122 155 137 147 151" fill="none" stroke="url(#groove)" stroke-linecap="round" stroke-width="10">
+          </path>
+          <path d="M119 141 C135 122 155 137 147 151" fill="none" opacity=".5" stroke="#f7dcff" stroke-linecap="round" stroke-width="3" transform="translate(-3 -4)">
+          </path>
+          <path d="M98 235 C91 219 72 222 70 207" fill="none" opacity=".65" stroke="#70459b" stroke-linecap="round" stroke-width="15">
+          </path>
+          <path d="M98 235 C91 219 72 222 70 207" fill="none" stroke="url(#groove)" stroke-linecap="round" stroke-width="10">
+          </path>
+          <path d="M98 235 C91 219 72 222 70 207" fill="none" opacity=".5" stroke="#f7dcff" stroke-linecap="round" stroke-width="3" transform="translate(-3 -4)">
+          </path>
+          <path d="M223 203 C238 184 251 206 241 226" fill="none" opacity=".65" stroke="#70459b" stroke-linecap="round" stroke-width="15">
+          </path>
+          <path d="M223 203 C238 184 251 206 241 226" fill="none" stroke="url(#groove)" stroke-linecap="round" stroke-width="10">
+          </path>
+          <path d="M223 203 C238 184 251 206 241 226" fill="none" opacity=".5" stroke="#f7dcff" stroke-linecap="round" stroke-width="3" transform="translate(-3 -4)">
+          </path>
+          <path d="M179 80 C196 91 190 108 181 116" fill="none" opacity=".65" stroke="#70459b" stroke-linecap="round" stroke-width="15">
+          </path>
+          <path d="M179 80 C196 91 190 108 181 116" fill="none" stroke="url(#groove)" stroke-linecap="round" stroke-width="10">
+          </path>
+          <path d="M179 80 C196 91 190 108 181 116" fill="none" opacity=".5" stroke="#f7dcff" stroke-linecap="round" stroke-width="3" transform="translate(-3 -4)">
+          </path>
+          <path d="M296 78 C315 74 332 94 321 109" fill="none" opacity=".65" stroke="#70459b" stroke-linecap="round" stroke-width="15">
+          </path>
+          <path d="M296 78 C315 74 332 94 321 109" fill="none" stroke="url(#groove)" stroke-linecap="round" stroke-width="10">
+          </path>
+          <path d="M296 78 C315 74 332 94 321 109" fill="none" opacity=".5" stroke="#f7dcff" stroke-linecap="round" stroke-width="3" transform="translate(-3 -4)">
+          </path>
+          <path d="M146 94 C159 82 169 93 165 108" fill="none" opacity=".65" stroke="#70459b" stroke-linecap="round" stroke-width="15">
+          </path>
+          <path d="M146 94 C159 82 169 93 165 108" fill="none" stroke="url(#groove)" stroke-linecap="round" stroke-width="10">
+          </path>
+          <path d="M146 94 C159 82 169 93 165 108" fill="none" opacity=".5" stroke="#f7dcff" stroke-linecap="round" stroke-width="3" transform="translate(-3 -4)">
+          </path>
+          <path d="M104 182 C120 195 144 181 143 168" fill="none" opacity=".65" stroke="#70459b" stroke-linecap="round" stroke-width="15">
+          </path>
+          <path d="M104 182 C120 195 144 181 143 168" fill="none" stroke="url(#groove)" stroke-linecap="round" stroke-width="10">
+          </path>
+          <path d="M104 182 C120 195 144 181 143 168" fill="none" opacity=".5" stroke="#f7dcff" stroke-linecap="round" stroke-width="3" transform="translate(-3 -4)">
+          </path>
+          <path d="M285 216 C272 236 290 245 306 230" fill="none" opacity=".65" stroke="#70459b" stroke-linecap="round" stroke-width="15">
+          </path>
+          <path d="M285 216 C272 236 290 245 306 230" fill="none" stroke="url(#groove)" stroke-linecap="round" stroke-width="10">
+          </path>
+          <path d="M285 216 C272 236 290 245 306 230" fill="none" opacity=".5" stroke="#f7dcff" stroke-linecap="round" stroke-width="3" transform="translate(-3 -4)">
+          </path>
+          <path d="M85 101 C99 68 130 54 162 56 M236 51 C272 46 301 60 314 80" fill="none" opacity=".35" stroke="#fff9ff" stroke-linecap="round" stroke-width="7">
+          </path>
+         </g>
+        </svg>
+       </div>
+       <h3>
+        A soft place to land
+       </h3>
+       <p class="muted">
+        You don't need to have everything figured out.
+       </p>
+      </article>
+      <article class="card">
+       <h3>
+        Today is a fresh page ✦
+       </h3>
+       <p class="muted">
+        Your feelings can change throughout the day. You can check in whenever you need.
+       </p>
+       <div class="mini-wellness">
+        🪻
+        <br/>
+        <strong>
+         One moment at a time
+        </strong>
+        <p>
+         Pause • Breathe • Be kind to yourself
+        </p>
+       </div>
+       <button class="btn primary" data-go="emotions">
+        Explore my feelings →
+       </button>
+      </article>
+      <article class="card">
+       <h3>
+        Little wins ✧
+       </h3>
+       <p class="muted" style="font-size:13px">
+        Today's self-care steps
+       </p>
+       <div class="stat-row">
+        <span>
+         Emotional check-in
+        </span>
+        <span id="checkProgress">
+         0/1
+        </span>
+       </div>
+       <div class="progress-track">
+        <div class="progress-fill" id="checkBar">
+        </div>
+       </div>
+       <div class="stat-row">
+        <span>
+         Journal reflection
+        </span>
+        <span id="journalProgress">
+         0/1
+        </span>
+       </div>
+       <div class="progress-track">
+        <div class="progress-fill" id="journalBar">
+        </div>
+       </div>
+       <div class="stat-row">
+        <span>
+         Calm activity
+        </span>
+        <span id="calmProgress">
+         0/1
+        </span>
+       </div>
+       <div class="progress-track">
+        <div class="progress-fill" id="calmBar">
+        </div>
+       </div>
+      </article>
+     </div>
+     <div class="card" style="margin-top:18px">
+      <h3>
+       A little note for today 💌
+      </h3>
+      <p aria-live="polite" class="quote" id="dailyMessage">
+      </p>
+      <button class="btn" id="newMessage">
+       Another gentle reminder ↻
+      </button>
+     </div>
+     <div class="quick">
+      <button data-go="emotions">
+       <span>
+        ♡
+       </span>
+       My Feelings
+      </button>
+      <button data-go="journal">
+       <span>
+        ▤
+       </span>
+       My Journal
+      </button>
+      <button data-go="calm">
+       <span>
+        ◌
+       </span>
+       Take a Breath
+      </button>
+      <button data-go="sounds">
+       <span>
+        ♫
+       </span>
+       Calm Sounds
+      </button>
+     </div>
+    </section>
+    <section class="page" id="emotions">
+     <div class="page-intro">
+      <span class="eyebrow">
+       EMOTIONAL CHECK-IN
+      </span>
+      <h1>
+       What are you feeling? ♡
+      </h1>
+      <p>
+       There is no right or wrong answer. Choose any feeling to receive a gentle message instantly.
+      </p>
+     </div>
+     <div class="emotion-grid" id="emotionGrid">
+     </div>
+     <div aria-live="polite" class="result" hidden="" id="emotionResult">
+      <h2 id="selectedEmotion">
+      </h2>
+      <p id="emotionMessage">
+      </p>
+      <label class="field" for="emotionNote">
+       Want to share more? (optional)
+      </label>
+      <textarea id="emotionNote" placeholder="Write a little about what's going on..."></textarea>
+      <div class="row-actions">
+       <button class="btn primary" id="saveCheckin">
+        Save privately on this device
+       </button>
+      </div>
+     </div>
+     <div class="card" style="margin-top:20px">
+      <h3>
+       Previous check-ins
+      </h3>
+      <div class="stack" id="checkinList">
+      </div>
+     </div>
+    </section>
+    <section class="page" id="journal">
+     <div class="page-intro">
+      <span class="eyebrow">
+       YOUR PRIVATE CORNER
+      </span>
+      <h1>
+       Let it out, gently. ▤
+      </h1>
+      <p>
+       Write without judgment. No name, account, or email needed.
+      </p>
+     </div>
+     <div class="card">
+      <p class="privacy">
+       🔒 Entries are saved only in this browser's local storage. They are not encrypted, not shared with other students, and may be accessible to others using this device or browser profile. Avoid writing identifying details on shared devices.
+      </p>
+      <label class="field" for="journalTitle">
+       Title (optional)
+      </label>
+      <input id="journalTitle" maxlength="100" placeholder="A thought on my mind..."/>
+      <label class="field" for="journalBody">
+       Your thoughts
+      </label>
+      <textarea id="journalBody" placeholder="Dear self, today I feel..." style="min-height:230px"></textarea>
+      <div class="row-actions">
+       <button class="btn primary" id="saveJournal">
+        Save entry
+       </button>
+       <button class="btn" id="clearDraft">
+        Clear draft
+       </button>
+      </div>
+     </div>
+     <div class="card" style="margin-top:20px">
+      <div class="entry-head">
+       <h3>
+        Saved reflections
+       </h3>
+       <button class="btn danger" id="clearJournal">
+        Delete all
+       </button>
+      </div>
+      <div class="stack" id="journalList">
+      </div>
+     </div>
+    </section>
+    <section class="page" id="calm">
+     <div class="page-intro">
+      <span class="eyebrow">
+       CALM CORNER
+      </span>
+      <h1>
+       A little room to breathe. ◌
+      </h1>
+      <p>
+       Go at your own pace. If breathing exercises feel uncomfortable, stop and breathe naturally.
+      </p>
+     </div>
+     <div class="two-col">
+      <div class="card">
+       <h3>
+        Gentle breathing
+       </h3>
+       <div class="breath-zone">
+        <div aria-hidden="true" class="breath-circle" id="breathCircle">
+         Breathe
+        </div>
+        <h2 aria-live="polite" id="breathInstruction">
+         Ready when you are
+        </h2>
+        <p class="muted">
+         Follow the circle gently: 4 seconds in, 4 seconds out.
+        </p>
+        <div class="row-actions" style="justify-content:center">
+         <button class="btn primary" id="startBreath">
+          Start
+         </button>
+         <button class="btn" id="stopBreath">
+          Stop
+         </button>
+        </div>
+       </div>
+      </div>
+      <div class="card">
+       <h3>
+        5–4–3–2–1 grounding 🌱
+       </h3>
+       <p class="muted">
+        Notice what is around you, one sense at a time.
+       </p>
+       <div id="groundList">
+       </div>
+       <div class="row-actions">
+        <button class="btn" id="resetGround">
+         Reset activity
+        </button>
+       </div>
+      </div>
+     </div>
+     <div class="card" style="margin-top:20px">
+      <h3>
+       A kind reminder 💜
+      </h3>
+      <p>
+       It's okay to take a break. You can reach out to a trusted adult or your school guidance counselor when things feel too heavy.
+      </p>
+     </div>
+    </section>
+    <section class="page" id="sounds">
+     <div class="page-intro">
+      <span class="eyebrow">
+       CALMING SOUNDS
+      </span>
+      <h1>
+       Find your peaceful moment. ♫
+      </h1>
+      <p>
+       These gentle sounds are generated by your browser. Keep your volume comfortable.
+      </p>
+     </div>
+     <div class="sounds-grid">
+      <div class="card sound-card">
+       <div class="sound-emoji">
+        🌧️
+       </div>
+       <h3>
+        Gentle Rain
+       </h3>
+       <p class="muted">
+        Soft rain-like background noise
+       </p>
+       <button class="btn primary sound-btn" data-sound="rain">
+        Play rain
+       </button>
+      </div>
+      <div class="card sound-card">
+       <div class="sound-emoji">
+        ☁️
+       </div>
+       <h3>
+        Dreamy Ambient
+       </h3>
+       <p class="muted">
+        A soft floating harmony
+       </p>
+       <button class="btn primary sound-btn" data-sound="ambient">
+        Play ambient
+       </button>
+      </div>
+      <div class="card sound-card">
+       <div class="sound-emoji">
+        🌊
+       </div>
+       <h3>
+        Ocean Hush
+       </h3>
+       <p class="muted">
+        Slow, peaceful waves of sound
+       </p>
+       <button class="btn primary sound-btn" data-sound="ocean">
+        Play ocean
+       </button>
+      </div>
+     </div>
+     <div class="card" style="margin-top:20px">
+      <label class="field" for="volume">
+       Sound volume
+      </label>
+      <input aria-label="Sound volume" id="volume" max="100" min="0" type="range" value="25"/>
+      <div class="row-actions">
+       <button class="btn danger" id="stopSound">
+        Stop all sounds ■
+       </button>
+      </div>
+      <p class="muted" id="soundStatus" role="status">
+       No sound playing
+      </p>
+     </div>
+    </section>
+    <section class="page" id="admin">
+     <div class="page-intro">
+      <span class="eyebrow">
+       PRIVATE STAFF AREA
+      </span>
+      <h1>
+       Participation dashboard 🛡️
+      </h1>
+      <p>
+       Anonymous usage totals only. Private notes and feelings are never uploaded.
+      </p>
+     </div>
+     <div class="card">
+      <p class="privacy" id="syncState" role="status">
+       Local wellness features work without an account. Online statistics require Supabase setup.
+      </p>
+      <div id="adminLogin">
+       <label class="field" for="adminEmail">
+        Authorized staff email
+       </label>
+       <input autocomplete="username" id="adminEmail" placeholder="Staff email" type="email"/>
+       <label class="field" for="adminPassword">
+        Password
+       </label>
+       <input autocomplete="current-password" id="adminPassword" placeholder="Password" type="password"/>
+       <div class="row-actions">
+        <button class="btn primary" id="adminSignIn">
+         Sign in securely
+        </button>
+       </div>
+      </div>
+      <div hidden="" id="adminPanel">
+       <div class="admin-stats">
+        <div>
+         <strong id="statVisits">
+          —
+         </strong>
+         <span>
+          Visits
+         </span>
+        </div>
+        <div>
+         <strong id="statDevices">
+          —
+         </strong>
+         <span>
+          Estimated devices
+         </span>
+        </div>
+        <div>
+         <strong id="statCheckins">
+          —
+         </strong>
+         <span>
+          Check-ins
+         </span>
+        </div>
+        <div>
+         <strong id="statToday">
+          —
+         </strong>
+         <span>
+          Visits today (UTC)
+         </span>
+        </div>
+       </div>
+       <p class="muted">
+        Numbers may include repeat visitors or multiple devices used by the same student. Counts do not identify individual students.
+       </p>
+       <div class="row-actions">
+        <button class="btn primary" id="refreshStats">
+         Refresh statistics
+        </button>
+        <button class="btn" id="adminSignOut">
+         Sign out
+        </button>
+       </div>
+      </div>
+     </div>
+    </section>
+    <footer class="footer">
+     MindCare supports emotional wellness, but does not replace support from a trusted adult, school guidance counselor, or qualified mental health professional. If you feel unsafe, seek immediate help from a trusted adult or local emergency services.
+    </footer>
+   </main>
+  </div>
+  <nav aria-label="Mobile navigation" class="mobile-nav">
+   <button class="active" data-page="dashboard">
+    <span>
+     ⌂
+    </span>
+    Home
+   </button>
+   <button data-page="emotions">
+    <span>
+     ♡
+    </span>
+    Feelings
+   </button>
+   <button data-page="journal">
+    <span>
+     ✎
+    </span>
+    Journal
+   </button>
+   <button data-page="calm">
+    <span>
+     ☼
+    </span>
+    Calm
+   </button>
+   <button data-page="sounds">
+    <span>
+     ♫
+    </span>
+    Sounds
+   </button>
+  </nav>
+  <div class="toast hidden" id="toast" role="status">
+  </div>
+  <script>
+   'use strict';
+
+// 1. Shared helpers and local-storage keys
+const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
+const feelings=[
+['Happy','😊','Enjoy this moment. You deserve to notice the good things happening today.'],
+['Sad','😢',"You don't have to force yourself to be okay right now. Your feelings deserve care, too."],
+['Anxious','😰',"You don't have to solve every possible problem right now. Focus on the next small thing you can do."],
+['Stressed','😣','You have a lot on your plate. You can pause, ask for help, and take one task at a time.'],
+['Angry','😠','Your feelings matter. Give yourself some space before reacting, and choose what feels safe and helpful.'],
+['Lonely','🥺',"Feeling lonely doesn't mean you're unimportant. You deserve connection and care."],
+['Overwhelmed','😵','You do not need to handle everything at once. One small step is enough for now.'],
+['Tired','😴','Rest is not something you need to earn. Your energy matters.'],
+['Confused','😕','Not knowing the answer yet is okay. Clarity can arrive a little at a time.'],
+['Nervous','😬','You can be nervous and still take a gentle next step.'],
+['Disappointed','😞','It hurts when things do not go as hoped. Give yourself room to feel that.'],
+['Guilty','😔','You can take responsibility for a mistake without being unkind to yourself.'],
+['Embarrassed','🫣','One awkward moment does not define who you are.'],
+['Jealous','😒','Jealousy can point to something you value. You can explore it without judging yourself.'],
+['Insecure','🫤','Your worth is not measured by comparisons. You are more than one doubt.'],
+['Hopeless','🌧️','This feeling deserves support. Please tell a trusted adult or counselor what has been weighing on you.'],
+['Numb','😶','Not feeling much can be confusing. You still deserve patience and support.'],
+['Frustrated','😤','It makes sense to feel frustrated when something is hard. Take a pause if you need one.'],
+['Peaceful','🕊️','Let yourself enjoy this peaceful moment, even if it is small.'],
+['Grateful','🙏','Noticing what you appreciate can be a gentle gift to yourself.'],
+['Excited','🤩','Your excitement is welcome here. Let yourself look forward to something.'],
+['Proud','🥳','Your effort matters. Take a moment to recognize what you have done.'],
+['Loved','🥰','You deserve relationships where care and respect are present.'],
+['Unmotivated','🪫','You do not have to feel inspired to begin. A tiny step is still a step.'],
+['Scared','😨','You deserve to feel safe. Reach out to someone you trust if you need support.'],
+['Ashamed','😓','A difficult moment does not erase your dignity or your ability to grow.'],
+['Bored','🥱','It is okay to have quiet moments. Curiosity may return when you are ready.'],
+['Curious','🧐','Your questions matter. Give yourself permission to explore.'],
+['Hopeful','🌈','Hold this possibility gently. You can move forward one step at a time.'],
+['Sick','🤒','Your wellbeing comes first. Rest and let a trusted adult know if you feel unwell.'],
+['Overthinking','🌀','Not every thought needs an answer right now. Return to what you can notice in this moment.'],
+['Left out','🥀','Being excluded can hurt. You deserve friendships that make room for you.'],
+['Pressured','📚','Other people’s expectations do not have to decide every step. Ask for help with what feels too much.'],
+['Regretful','🍂','You can learn from yesterday without living there forever.'],
+['Calm','🌿','You can appreciate this steadiness without needing to hold onto it perfectly.'],
+['Mixed feelings','🎭','Two different feelings can both be real. You do not have to choose just one.'],
+['Worried','😟','Worry can make the future feel loud. Focus on one helpful thing within reach.'],
+['Irritated','🙄','Small things can add up. Give yourself a little breathing room.'],
+['Heartbroken','💔','Heartbreak deserves gentleness and time. You do not have to carry it alone.'],
+['Exhausted','🫠','You have limits, and they deserve respect. A pause is allowed.'],
+['Empty','◌','Feeling empty can be difficult to describe. Consider sharing it with someone you trust.'],
+['Confused about life','🧭','You do not need a complete life plan today. Learning who you are takes time.'],
+['Disappointed in oneself','🪞','A setback is not the whole story of you. Try speaking to yourself with compassion.'],
+['Feeling misunderstood','💭','It hurts when your meaning does not come across. Your perspective deserves to be heard.'],
+['Feeling unwanted','🪷','That feeling can hurt deeply. You deserve care and meaningful connection.'],
+['Feeling ignored','📩','It is understandable to want to be noticed and listened to.'],
+['Feeling appreciated','🌻','Let yourself receive appreciation. Your contributions matter.'],
+['Motivated','🚀','Use this energy kindly. Progress does not have to mean pushing past your limits.'],
+['Relieved','😮‍💨','You can loosen your shoulders a little. You have made it through something demanding.'],
+['Other emotions','💜','Whatever name fits your feelings, they are worth understanding with kindness.']
+];
+// 2. Daily reminders and emotion messages
+const reminders=['You are allowed to grow at your own pace. ✦','One difficult day does not define your whole story. 💜','You deserve rest, kindness, and support. ☁️','Small steps count, even when no one sees them. ✧','You can ask for help without having to explain everything perfectly. 🌿'];
+const KEY_CHECK='mindcare_checkins_v1',KEY_JOURNAL='mindcare_journal_v1',KEY_CALM='mindcare_calm_v1';
+function read(key){try{let v=JSON.parse(localStorage.getItem(key)||'[]');return Array.isArray(v)?v:[]}catch{return []}}
+function write(key,v){try{localStorage.setItem(key,JSON.stringify(v));return true}catch{toast('Could not save. Browser storage may be unavailable or full.');return false}}
+function localDay(d=new Date()){return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0')}
+function toast(msg){let el=$('#toast');el.textContent=msg;el.classList.remove('hidden');clearTimeout(toast.timer);toast.timer=setTimeout(()=>el.classList.add('hidden'),3200)}
+// 3. Page navigation and dashboard date
+function navigate(page){if(!document.getElementById(page))return;$$('.page').forEach(el=>el.classList.toggle('active',el.id===page));$$('[data-page]').forEach(el=>{let active=el.dataset.page===page;el.classList.toggle('active',active);if(active)el.setAttribute('aria-current','page');else el.removeAttribute('aria-current')});history.replaceState(null,'','#'+page);window.scrollTo({top:0,behavior:'smooth'});if(page==='dashboard')renderDashboard();if(page==='journal')renderJournal();if(page==='emotions')renderCheckins()}
+$$('[data-page]').forEach(b=>b.addEventListener('click',()=>navigate(b.dataset.page)));$$('[data-go]').forEach(b=>b.addEventListener('click',()=>navigate(b.dataset.go)));
+$('#todayDate').textContent=new Date().toLocaleDateString('en-PH',{month:'short',day:'numeric',year:'numeric'});
+let reminderIndex=Math.floor(Math.random()*reminders.length);function showReminder(){$('#dailyMessage').textContent=reminders[reminderIndex]}showReminder();$('#newMessage').onclick=()=>{reminderIndex=(reminderIndex+1)%reminders.length;showReminder()};
+// 4. Emotional check-in
+let selected=null;const grid=$('#emotionGrid');feelings.forEach(([name,emoji,message])=>{const b=document.createElement('button');b.className='emotion';b.type='button';const e=document.createElement('span');e.className='emoji';e.textContent=emoji;b.append(e,document.createTextNode(name));b.onclick=()=>{selected={name,emoji,message};$$('.emotion').forEach(x=>x.classList.remove('selected'));b.classList.add('selected');$('#emotionResult').hidden=false;$('#selectedEmotion').textContent=emoji+' '+name;$('#emotionMessage').textContent=message;$('#emotionNote').value='';$('#emotionResult').scrollIntoView({behavior:'smooth',block:'nearest'})};grid.append(b)});
+$('#saveCheckin').onclick=()=>{if(!selected)return;let entries=read(KEY_CHECK);entries.unshift({id:Date.now()+Math.random(),name:selected.name,emoji:selected.emoji,note:$('#emotionNote').value.trim().slice(0,3000),date:new Date().toISOString()});if(write(KEY_CHECK,entries)){toast('Check-in saved on this device 💜');renderCheckins();renderDashboard()}};
+// 5. Shared entry renderer and check-in history
+function makeEntry(title,body,date,onDelete){let item=document.createElement('div');item.className='entry';let head=document.createElement('div');head.className='entry-head';let info=document.createElement('div');let h=document.createElement('strong');h.textContent=title;let t=document.createElement('time');t.style.display='block';t.textContent=new Date(date).toLocaleString('en-PH');info.append(h,t);let del=document.createElement('button');del.textContent='Delete';del.setAttribute('aria-label','Delete '+title);del.onclick=onDelete;head.append(info,del);item.append(head);if(body){let p=document.createElement('p');p.textContent=body;item.append(p)}return item}
+function renderCheckins(){let el=$('#checkinList'),entries=read(KEY_CHECK);el.replaceChildren();if(!entries.length){el.textContent='No check-ins yet. Your feelings can start here.';return}entries.forEach(x=>el.append(makeEntry((x.emoji||'💜')+' '+x.name,x.note,x.date,()=>{if(confirm('Delete this check-in?')){write(KEY_CHECK,read(KEY_CHECK).filter(a=>a.id!==x.id));renderCheckins();renderDashboard()}})))}
+// 6. Private journal
+$('#saveJournal').onclick=()=>{let body=$('#journalBody').value.trim(),title=$('#journalTitle').value.trim().slice(0,100);if(!body){toast('Write something before saving.');return}let entries=read(KEY_JOURNAL);entries.unshift({id:Date.now()+Math.random(),title:title||'Untitled reflection',body:body.slice(0,20000),date:new Date().toISOString()});if(write(KEY_JOURNAL,entries)){$('#journalTitle').value='';$('#journalBody').value='';toast('Journal entry saved on this device ✦');renderJournal();renderDashboard()}};
+$('#clearDraft').onclick=()=>{if(confirm('Clear the unsaved draft?')){$('#journalTitle').value='';$('#journalBody').value=''}};
+$('#clearJournal').onclick=()=>{if(read(KEY_JOURNAL).length&&confirm('Permanently delete all saved journal entries on this browser?')){write(KEY_JOURNAL,[]);renderJournal();renderDashboard()}};
+function renderJournal(){let el=$('#journalList'),entries=read(KEY_JOURNAL);el.replaceChildren();if(!entries.length){el.textContent='No entries yet. Your story can begin whenever you are ready.';return}entries.forEach(x=>el.append(makeEntry(x.title,x.body,x.date,()=>{if(confirm('Delete this journal entry?')){write(KEY_JOURNAL,read(KEY_JOURNAL).filter(a=>a.id!==x.id));renderJournal();renderDashboard()}})))}
+// 7. Calm activities and daily progress
+function markCalm(){let days=read(KEY_CALM);if(!days.includes(localDay())){days.push(localDay());write(KEY_CALM,days.slice(-120))}renderDashboard()}
+function renderDashboard(){const check=read(KEY_CHECK),journ=read(KEY_JOURNAL),today=localDay();const done=[check.some(x=>localDay(new Date(x.date))===today),journ.some(x=>localDay(new Date(x.date))===today),read(KEY_CALM).includes(today)];['check','journal','calm'].forEach((name,i)=>{$('#'+name+'Progress').textContent=(done[i]?1:0)+'/1';$('#'+name+'Bar').style.width=done[i]?'100%':'0%'});}
+const ground=['5 things you can see','4 things you can feel','3 things you can hear','2 things you can smell','1 thing you can taste'];ground.forEach((s,i)=>{let d=document.createElement('div');d.className='ground-item';let label=document.createElement('label');let input=document.createElement('input');input.type='checkbox';input.setAttribute('aria-label',s);input.onchange=()=>{if(input.checked)markCalm()};label.append(input,document.createTextNode(s));d.append(label);$('#groundList').append(d)});$('#resetGround').onclick=()=>$$('#groundList input').forEach(x=>x.checked=false);
+let breathTimer=null,breathStarted=0;function updateBreath(){let seconds=Math.floor((performance.now()-breathStarted)/1000)%8;$('#breathInstruction').textContent=seconds<4?'Breathe in gently...':'Breathe out gently...'}$('#startBreath').onclick=()=>{if(breathTimer)return;breathStarted=performance.now();$('#breathCircle').classList.add('running');updateBreath();breathTimer=setInterval(updateBreath,200);markCalm()};function stopBreathing(){clearInterval(breathTimer);breathTimer=null;$('#breathCircle').classList.remove('running');$('#breathInstruction').textContent='Ready when you are'}$('#stopBreath').onclick=stopBreathing;
+// 8. Browser-generated calming audio
+let audioCtx=null,master=null,sources=[],activeSound=null;const soundButtons=$$('.sound-btn');function stopSound(){for(const source of sources){try{source.stop()}catch{}try{source.disconnect()}catch{}}sources=[];if(master){try{master.disconnect()}catch{}}master=null;activeSound=null;soundButtons.forEach(b=>{b.textContent='Play '+b.dataset.sound;b.classList.add('primary')});$('#soundStatus').textContent='No sound playing'}function noiseBuffer(ctx){let length=ctx.sampleRate*3,b=ctx.createBuffer(1,length,ctx.sampleRate),data=b.getChannelData(0);for(let i=0;i<length;i++)data[i]=Math.random()*2-1;return b}function playSound(type){stopSound();const AC=window.AudioContext||window.webkitAudioContext;if(!AC){toast('Web Audio is not supported in this browser.');return}try{audioCtx=audioCtx||new AC();audioCtx.resume();master=audioCtx.createGain();master.gain.value=Number($('#volume').value)/100*.25;master.connect(audioCtx.destination);if(type==='ambient'){[174.61,261.63,349.23].forEach((f,i)=>{let o=audioCtx.createOscillator(),g=audioCtx.createGain();o.type='sine';o.frequency.value=f;g.gain.value=.15/(i+1);o.connect(g).connect(master);o.start();sources.push(o)})}else{let src=audioCtx.createBufferSource(),filter=audioCtx.createBiquadFilter();src.buffer=noiseBuffer(audioCtx);src.loop=true;filter.type='lowpass';filter.frequency.value=type==='rain'?1500:550;src.connect(filter).connect(master);src.start();sources.push(src);if(type==='ocean'){let lfo=audioCtx.createOscillator(),gain=audioCtx.createGain();lfo.frequency.value=.12;gain.gain.value=.3;master.gain.value=.45*Number($('#volume').value)/100;lfo.connect(gain.gain);lfo.start();sources.push(lfo)}}activeSound=type;soundButtons.forEach(b=>{b.textContent=b.dataset.sound===type?'Stop '+type:'Play '+b.dataset.sound;b.classList.toggle('primary',b.dataset.sound!==type)});$('#soundStatus').textContent='Playing '+type+' • adjust volume as needed';markCalm()}catch(e){stopSound();toast('Could not start audio on this device.')}}soundButtons.forEach(b=>b.onclick=()=>activeSound===b.dataset.sound?stopSound():playSound(b.dataset.sound));$('#stopSound').onclick=stopSound;$('#volume').oninput=()=>{if(master)master.gain.value=Number($('#volume').value)/100*.25};document.addEventListener('visibilitychange',()=>{if(document.hidden){stopSound();stopBreathing()}});window.addEventListener('pagehide',stopSound);
+// 9. Initial page render
+renderCheckins();renderJournal();renderDashboard();if(['dashboard','emotions','journal','calm','sounds'].includes(location.hash.slice(1)))navigate(location.hash.slice(1));
+
+// 10. Optional anonymous analytics and staff dashboard
+/* HYBRID ANALYTICS: Only random installation ID and event type are sent.
+   NEVER upload journal text, emotion names, or optional check-in notes. */
+const CLOUD = {url:'', anonKey:''}; // Set Supabase Project URL and publishable/anon key to enable counts.
+const CLOUD_READY=Boolean(CLOUD.url && CLOUD.anonKey);
+const QUEUE_KEY='mindcare_analytics_queue_v1',DEVICE_KEY='mindcare_device_v1';
+let staffToken=null;
+function deviceId(){let id=localStorage.getItem(DEVICE_KEY);if(!id){id=crypto.randomUUID?crypto.randomUUID():'mc-'+Date.now()+'-'+Math.random().toString(36).slice(2);localStorage.setItem(DEVICE_KEY,id)}return id}
+function queueEvent(kind){try{const q=read(QUEUE_KEY);q.push({event_type:kind,device_id:deviceId(),occurred_at:new Date().toISOString()});write(QUEUE_KEY,q.slice(-500));syncEvents()}catch(e){console.warn('Analytics unavailable',e)}}
+let syncing=false;
+async function syncEvents(){if(syncing||!CLOUD_READY||!navigator.onLine)return;syncing=true;try{const q=read(QUEUE_KEY);if(!q.length)return;const batch=q.slice(0,25);const res=await fetch(CLOUD.url+'/rest/v1/rpc/log_mindcare_events',{method:'POST',headers:{apikey:CLOUD.anonKey,'Content-Type':'application/json'},body:JSON.stringify({events:batch})});if(!res.ok)throw Error('Sync HTTP '+res.status);write(QUEUE_KEY,read(QUEUE_KEY).slice(batch.length));if(read(QUEUE_KEY).length)setTimeout(syncEvents,250)}catch(e){console.warn('MindCare offline queue retained',e.message)}finally{syncing=false}}
+function cloudStatus(){const e=document.getElementById('syncState');if(e)e.textContent=!CLOUD_READY?'Cloud not configured: student tools work locally, but school-wide counts are unavailable.':navigator.onLine?'Online: anonymous participation counts can sync.':'Offline: participation counts will sync when you reconnect.'}
+window.addEventListener('online',()=>{cloudStatus();syncEvents()});window.addEventListener('offline',cloudStatus);
+cloudStatus();queueEvent('visit');
+// Count successful check-ins without inspecting their contents.
+const originalSaveCheckin=document.getElementById('saveCheckin').onclick;
+document.getElementById('saveCheckin').onclick=function(e){const before=read(KEY_CHECK).length;originalSaveCheckin.call(this,e);if(read(KEY_CHECK).length>before)queueEvent('checkin')};
+async function signIn(){if(!CLOUD_READY){toast('Configure Supabase first.');return}const email=$('#adminEmail').value.trim(),password=$('#adminPassword').value;if(!email||!password){toast('Enter staff email and password.');return}try{const r=await fetch(CLOUD.url+'/auth/v1/token?grant_type=password',{method:'POST',headers:{apikey:CLOUD.anonKey,'Content-Type':'application/json'},body:JSON.stringify({email,password})});const data=await r.json();if(!r.ok||!data.access_token)throw Error('Invalid credentials');staffToken=data.access_token;$('#adminLogin').hidden=true;$('#adminPanel').hidden=false;$('#adminPassword').value='';await refreshStats()}catch(e){toast('Could not sign in. Check staff access and internet.')}}
+async function refreshStats(){if(!staffToken||!CLOUD_READY)return;try{const r=await fetch(CLOUD.url+'/rest/v1/rpc/mindcare_admin_stats',{method:'POST',headers:{apikey:CLOUD.anonKey,Authorization:'Bearer '+staffToken,'Content-Type':'application/json'},body:'{}'});if(!r.ok)throw Error('Access denied');const data=await r.json();$('#statVisits').textContent=data.visits??'0';$('#statDevices').textContent=data.devices??'0';$('#statCheckins').textContent=data.checkins??'0';$('#statToday').textContent=data.today_visits??'0'}catch(e){toast('Unable to load statistics. Staff role or connection may be missing.')}}
+$('#adminSignIn').onclick=signIn;$('#refreshStats').onclick=refreshStats;$('#adminSignOut').onclick=()=>{staffToken=null;$('#adminLogin').hidden=false;$('#adminPanel').hidden=true};
+// PWA requires HTTPS or localhost; opening a file:// URL cannot register a service worker.
+if('serviceWorker' in navigator && location.protocol!=='file:'){window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js').catch(()=>{}))}
+  </script>
+ </body>
+</html>
