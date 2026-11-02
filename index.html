@@ -111,4 +111,19 @@ function saveSupport(){put('support',{person:$('supportPerson').value,place:$('s
 function renderAll(){renderMoods();renderJournal()}
 makeBubbles();renderAll();
 </script>
+
+  <script>
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", () => {
+    navigator.serviceWorker.register("./service-worker.js")
+      .then(() => {
+        console.log("MindCare offline support is ready!");
+      })
+      .catch((error) => {
+        console.error("Service Worker error:", error);
+      });
+  });
+}
+  </script>
+  
 </body></html>
